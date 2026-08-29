@@ -1,0 +1,41 @@
+﻿[
+  {
+    "id": "krux40",
+    "title": "KRUX/40 — Manual Grinder",
+    "type": "video",
+    "ratio": "16:9",
+    "src": "https://cdn.YOURDOMAIN.com/krux40.mp4",
+    "poster": "/posters/krux40.webp",
+    "blurb": "Dawn in the mountains. Grind. The world wakes up.",
+    "role": "Concept, direction, generation, edit",
+    "tools": ["Veo 3.1", "Nano Banana Pro", "Google Flow"],
+    "spec": true,
+    "featured": true
+  },
+  {
+    "id": "volt9",
+    "title": "VÖLT//9 — Titanium EDC Light",
+    "type": "video",
+    "ratio": "9:16",
+    "src": "https://cdn.YOURDOMAIN.com/volt9.mp4",
+    "poster": "/posters/volt9.webp",
+    "blurb": "15 min. 2 generations. Logo correct on the first try.",
+    "role": "Concept, direction, generation, edit",
+    "tools": ["Veo 3.1", "Nano Banana Pro", "Google Flow"],
+    "spec": true,
+    "featured": false
+  },
+  {
+    "id": "avyn",
+    "title": "AVYN — Eau de Parfum",
+    "type": "video",
+    "ratio": "9:16",
+    "src": "https://cdn.YOURDOMAIN.com/avyn.mp4",
+    "poster": "/posters/avyn.webp",
+    "blurb": "UGC 30 s spec. You\u2019re the only one who\u2019ll never smell it right.",
+    "role": "Concept, script, generation, voice, edit",
+    "tools": ["Veo 3.1", "ElevenLabs", "Google Flow"],
+    "spec": true,
+    "featured": false
+  }
+]

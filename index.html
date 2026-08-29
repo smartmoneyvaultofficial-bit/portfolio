@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J. Cobo — AI Ad Director</title>
+  <meta name="description" content="Directing AI to make ads worth watching. Spec-quality product films from prompt to final cut. Available for hire." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="J. Cobo — Directing AI to make ads worth watching" />
+  <meta property="og:description" content="Spec-quality product films. Prompt to delivery. See the work." />
+  <meta property="og:image" content="https://YOURDOMAIN.com/posters/og.webp" />
+  <meta property="og:image:width" content="1376" />
+  <meta property="og:image:height" content="768" />
+  <meta property="og:url" content="https://YOURDOMAIN.com" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="J. Cobo — Directing AI to make ads worth watching" />
+  <meta name="twitter:description" content="Spec-quality product films. Prompt to delivery. See the work." />
+  <meta name="twitter:image" content="https://YOURDOMAIN.com/posters/og.webp" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="header-identity">
+        <h1 class="site-name">J. Cobo</h1>
+        <p class="site-tagline">Directing AI to make ads worth watching.</p>
+      </div>
+      <nav class="header-actions" aria-label="Contact">
+        <a
+          id="btn-email"
+          class="btn btn-primary"
+          href="mailto:javierc.dom@gmail.com"
+          aria-label="Send email to J. Cobo"
+        >Email</a>
+        <button
+          id="btn-copy"
+          class="btn btn-ghost"
+          type="button"
+          aria-label="Copy email address to clipboard"
+          data-email="javierc.dom@gmail.com"
+        >Copy email</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- GRID -->
+  <main id="main-content" class="grid-section" aria-label="Portfolio work">
+    <div id="grid" class="work-grid" role="list" aria-busy="true" aria-label="Ad portfolio pieces"></div>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div
+    id="lightbox"
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Video player"
+    hidden
+  >
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-frame">
+      <button
+        id="lightbox-close"
+        class="lightbox-close"
+        type="button"
+        aria-label="Close video"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <video
+        id="lightbox-video"
+        class="lightbox-video"
+        controls
+        playsinline
+        preload="metadata"
+        aria-label="Full-screen video player"
+      ></video>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="footer-email">
+      <a href="mailto:javierc.dom@gmail.com" aria-label="Email J. Cobo">javierc.dom@gmail.com</a>
+    </p>
+    <p class="footer-year" aria-label="Copyright year">
+      <span id="year"></span>
+    </p>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
