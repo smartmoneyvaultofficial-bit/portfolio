@@ -179,11 +179,13 @@ a {
   width: 100%;
 }
 
+/* Masonry-style columns: cards vary in height (portrait video vs.
+   landscape stills), so CSS Grid rows would size to the tallest card
+   per row and leave dead space under shorter neighbors. Columns let
+   each card stack tight regardless of its neighbors' height. */
 .work-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: clamp(12px, 2vw, 20px);
-  align-items: start;
+  column-width: 320px;
+  column-gap: clamp(12px, 2vw, 20px);
 }
 
 /* ── Cards ────────────────────────────────────────────────── */
@@ -200,6 +202,8 @@ a {
     box-shadow 0.22s var(--ease);
   display: flex;
   flex-direction: column;
+  break-inside: avoid;
+  margin-bottom: clamp(12px, 2vw, 20px);
 }
 
 .card:hover {
@@ -208,10 +212,10 @@ a {
   box-shadow: 0 8px 32px rgba(0,0,0,0.5);
 }
 
-/* Featured card: double column on desktop */
+/* Featured card: full-width hero on desktop */
 @media (min-width: 768px) {
   .card--featured {
-    grid-column: span 2;
+    column-span: all;
   }
 }
 

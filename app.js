@@ -1,5 +1,5 @@
 ﻿/**
- * app.js — J. Cobo portfolio
+ * app.js — Javier Cobo portfolio
  * Vanilla JS, no dependencies.
  *
  * Responsibilities:

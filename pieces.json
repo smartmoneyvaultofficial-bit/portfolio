@@ -26,12 +26,12 @@
     "featured": false
   },
   {
-    "id": "avyn",
-    "title": "AVYN — Eau de Parfum",
+    "id": "aurelle-parfum",
+    "title": "AURELLE — Eau de Parfum",
     "type": "video",
     "ratio": "9:16",
     "src": "https://pub-9e646f4058704fdbacd71931b79d06a1.r2.dev/Serum_droplet_falling_into_bottle_202608241739.mp4",
-    "poster": "/posters/avyn.webp",
+    "poster": "/posters/aurelle-parfum.webp",
     "blurb": "UGC 30 s spec. You\u2019re the only one who\u2019ll never smell it right.",
     "role": "Concept, script, generation, voice, edit",
     "tools": ["Veo 3.1", "ElevenLabs", "Google Flow"],

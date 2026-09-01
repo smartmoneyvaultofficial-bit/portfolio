@@ -1,4 +1,4 @@
-﻿# J. Cobo — AI Ad Portfolio
+﻿# Javier Cobo — AI Ad Portfolio
 
 Static portfolio. One page. Zero build step.
 
