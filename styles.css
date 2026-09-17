@@ -231,7 +231,7 @@ a { color: inherit; }
   gap: clamp(24px, 4vw, 64px);
   align-items: center;
 }
-.work--portrait .work-media { max-width: min(410px, 100%); justify-self: end; }
+.work--portrait .work-media { width: min(410px, 100%); justify-self: end; }
 .work--portrait.work--flip .work-media { order: -1; justify-self: start; }
 
 /* Landscape rows: media full width, text underneath */
@@ -508,7 +508,7 @@ a { color: inherit; }
 @media (max-width: 860px) {
   .work--portrait .work-body { grid-template-columns: 1fr; align-items: start; }
   .work--portrait .work-media,
-  .work--portrait.work--flip .work-media { order: 2; justify-self: start; max-width: min(400px, 88vw); margin-top: 18px; }
+  .work--portrait.work--flip .work-media { order: 2; justify-self: start; width: min(400px, 88vw); margin-top: 18px; }
 
   .process-steps { grid-template-columns: 1fr; }
 }
