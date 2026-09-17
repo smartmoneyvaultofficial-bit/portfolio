@@ -1,125 +1,62 @@
-﻿# Javier Cobo — AI Ad Portfolio
+# Javier Cobo — AI Ad Portfolio
 
 Static portfolio. One page. Zero build step.
 
 ## Stack
 
-HTML + CSS + Vanilla JS. No npm. No framework. No CDN fonts.
-Deploy: GitHub repo imported in Vercel.
-Videos: Cloudflare R2 with custom domain (not `*.r2.dev`).
+HTML + CSS + Vanilla JS. No npm, no framework, no CDN — the only font (Archivo variable) is self-hosted in `/fonts`.
+Deploy: GitHub repo imported in Vercel (framework preset "Other", no build command).
+Videos: Cloudflare R2 public bucket over `r2.dev`.
+
+> ⚠️ `r2.dev` is rate-limited and intended by Cloudflare for development traffic only.
+> Decision (17 sep 2026): accepted for now. If it ever throttles real visitors, connect a
+> custom domain to the bucket (requires the domain as a zone in the same Cloudflare account)
+> and update the video `src` values plus the OG meta tags in `index.html`.
 
 ---
 
 ## Adding a piece
 
-1. Open `pieces.json`.
-2. Add an entry following this schema:
+Edit `pieces.json`. Pieces render in array order (the number badge is the array position).
+
+**Video or image piece:**
 
 ```json
 {
-  "id": "unique-kebab-id",
-  "title": "BRAND — Product name",
-  "type": "video",
+  "id": "brand-slug",
+  "kind": "video",
+  "brand": "BRAND",
+  "name": "Product — format",
+  "meta": "SPEC · UGC FILM · 30 S · 9:16 · EN",
+  "tools": "Veo 3.1 · ElevenLabs",
+  "blurb": "One or two lines, process numbers beat adjectives.",
   "ratio": "9:16",
-  "src": "https://cdn.YOURDOMAIN.com/filename.mp4",
-  "poster": "/posters/filename.webp",
-  "blurb": "One line, max 90 characters.",
-  "role": "Concept, generation, edit",
-  "tools": ["Veo 3.1", "Nano Banana Pro"],
-  "spec": true,
-  "featured": false
+  "src": "https://pub-XXXX.r2.dev/file.mp4",
+  "poster": "/posters/file.webp"
 }
 ```
 
-**Fields:**
-- `id` — unique string, used as data attribute.
-- `type` — `"video"` or `"image"`.
-- `ratio` — `"9:16"`, `"16:9"`, `"4:5"`, or `"1:1"`.
-- `src` — absolute URL (R2 CDN) for video; `/posters/file.webp` for image.
-- `poster` — WebP thumb in `/posters/`, shown before video loads.
-- `blurb` — short description, max 90 chars.
-- `spec` — `true` shows a "Spec" badge. Use for work without a real client.
-- `featured` — `true` makes the card double-width on desktop (use once per row max).
+- `kind`: `"video"`, `"image"` or `"campaign"`.
+- `ratio`: `"9:16"`, `"16:9"`, `"4:3"` or `"4:5"` — must match the real file, it controls the frame.
+- For `"image"`, `src` is the image itself (it is reused full-size in the lightbox) and `alt` is required.
+- 9:16 videos lay out as portrait rows (media beside text, sides alternate automatically);
+  everything else lays out full-width.
 
-3. Save. No rebuild needed — Vercel will redeploy on git push.
+**Campaign piece:** same text fields plus an `items` array of `{kind, label, ratio, src, poster?, alt?}`.
+Items render as a horizontal contact strip and open in the lightbox as a gallery (arrow keys work).
 
----
+## Assets
 
-## Poster images
+- Posters: WebP, ≤150 KB, same frame you want as the still. `ffmpeg -ss <t> -i in.mp4 -frames:v 1 -vf scale=720:-2 -c:v libwebp -quality 84 out.webp`
+- Statics for the lightbox live in `/posters/full/` at their native resolution.
+- Videos: compress for web before uploading to R2 — `ffmpeg -i in.mp4 -c:v libx264 -crf 26 -preset medium -c:a aac -b:a 128k -movflags +faststart out.mp4`. Set Content-Type `video/mp4` when uploading.
 
-1. Export a representative frame as JPEG or PNG.
-2. Convert to WebP at 85% quality, max 800px wide:
-   ```
-   cwebp -q 85 -resize 800 0 frame.jpg -o posters/filename.webp
-   ```
-   (or use Squoosh, GIMP, or any converter)
-3. Place in `/posters/`. Commit and push.
+## Local preview
 
----
-
-## Uploading a video to Cloudflare R2
-
-### Prerequisites
-- Cloudflare account with R2 enabled.
-- A bucket created (e.g., `portfolio-videos`).
-- A **custom domain** connected to the bucket via a Cloudflare Worker or R2 public access
-  (Settings → Public access → Custom domain). Do NOT use the default `*.r2.dev` endpoint —
-  it is rate-limited and not suitable for production.
-
-### Steps
-
-1. In the R2 dashboard, open your bucket and click **Upload object**.
-2. Choose the `.mp4` file.
-3. Before confirming, set the **Content-Type** header to `video/mp4`.
-   (Without this, some browsers may not stream the video correctly.)
-4. After upload, the file is accessible at:
-   ```
-   https://cdn.YOURDOMAIN.com/filename.mp4
-   ```
-5. Paste that full URL into `pieces.json` → `"src"`.
-
-### OG image
-`/posters/og.webp` must also be reachable at an absolute URL in the meta tags.
-Update `og:image` and `twitter:image` in `index.html` once you have your domain.
-
----
-
-## Deploy on Vercel
-
-```bash
-cd portfolio
-git init
-git add .
-git commit -m "chore: initial portfolio"
-# Create a repo on GitHub (no template, no .gitignore, public or private)
-git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
-git push -u origin main
-```
-
-Then:
-1. Go to [vercel.com](https://vercel.com) → **Add New Project**.
-2. Import your GitHub repo.
-3. Framework preset: **Other** (static site — no framework).
-4. Root directory: leave as `./` (or the subfolder if the repo is nested).
-5. Build command: **leave empty**.
-6. Output directory: **leave empty** (or `.`).
-7. Click **Deploy**.
-
-Vercel auto-deploys on every `git push`.
-
----
+Any static server from the repo root works, e.g. `python -m http.server` or a 30-line Node server. No build.
 
 ## What is NOT in this repo (by design)
 
 - No analytics, no cookies, no consent banner.
-- No serverless functions.
-- No environment variables.
-- No blog, no about page, no contact form.
-
----
-
-## Suggestions (not implemented)
-
-- **Password protection** via a Vercel password page if you want the portfolio private.
-- **WebM alongside MP4** for smaller file sizes on Chrome/Firefox.
-- **Plausible or Fathom** for privacy-respecting analytics if you ever need view counts.
+- No serverless functions, no environment variables.
+- No client names anywhere: every brand shown is fictional spec work, and the page says so.

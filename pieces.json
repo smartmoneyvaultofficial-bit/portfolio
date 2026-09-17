@@ -1,119 +1,128 @@
-﻿[
+[
+  {
+    "id": "avyn",
+    "kind": "video",
+    "brand": "AVYN",
+    "name": "Eau de parfum — spec UGC",
+    "meta": "SPEC · UGC FILM · 35 S · 9:16 · EN",
+    "tools": "Veo 3.1 · ElevenLabs · Google Flow",
+    "blurb": "Full UGC build: scripted, cast, voiced and cut with AI. One face, one voice, thirty-five seconds — nothing drifts.",
+    "ratio": "9:16",
+    "src": "https://pub-9e646f4058704fdbacd71931b79d06a1.r2.dev/AVYN.mp4",
+    "poster": "/posters/avyn.webp"
+  },
+  {
+    "id": "brin",
+    "kind": "video",
+    "brand": "BRIN",
+    "name": "Sea-salt texturising spray — spec UGC",
+    "meta": "SPEC · UGC FILM · 30 S · 9:16 · EN",
+    "tools": "Veo 3.1 · OmniHuman · ElevenLabs",
+    "blurb": "Second persona, same pipeline. The spoken block lands mid-film and the identity holds through every cut.",
+    "ratio": "9:16",
+    "src": "https://pub-9e646f4058704fdbacd71931b79d06a1.r2.dev/BRIN.mp4",
+    "poster": "/posters/brin.webp"
+  },
   {
     "id": "krux40",
-    "title": "KRUX/40 — Manual Grinder",
-    "type": "video",
+    "kind": "video",
+    "brand": "KRUX/40",
+    "name": "Manual coffee grinder — product film",
+    "meta": "SPEC · PRODUCT FILM · 13 S · 16:9",
+    "tools": "Veo 3.1 · Nano Banana Pro · Google Flow",
+    "blurb": "Dead grey dawn, one grind, the world wakes up. Produced start to finish in about an hour.",
     "ratio": "16:9",
     "src": "https://pub-9e646f4058704fdbacd71931b79d06a1.r2.dev/coffeegrinder.mp4",
-    "poster": "/posters/krux40.webp",
-    "blurb": "Dawn in the mountains. Grind. The world wakes up.",
-    "role": "Concept, direction, generation, edit",
-    "tools": ["Veo 3.1", "Nano Banana Pro", "Google Flow"],
-    "spec": true,
-    "featured": true
+    "poster": "/posters/krux40.webp"
   },
   {
     "id": "volt9",
-    "title": "VÖLT//9 — Titanium EDC Light",
-    "type": "video",
-    "ratio": "9:16",
+    "kind": "video",
+    "brand": "VÖLT//9",
+    "name": "Titanium EDC light — product film",
+    "meta": "SPEC · PRODUCT FILM · 8 S · 16:9",
+    "tools": "Veo 3.1 · Nano Banana Pro · Google Flow",
+    "blurb": "15 minutes. 2 generations. Logo correct on the first try.",
+    "ratio": "16:9",
     "src": "https://pub-9e646f4058704fdbacd71931b79d06a1.r2.dev/Titanium_flashlight_product_comm%E2%80%A6_202608141550.mp4",
-    "poster": "/posters/volt9.webp",
-    "blurb": "15 min. 2 generations. Logo correct on the first try.",
-    "role": "Concept, direction, generation, edit",
-    "tools": ["Veo 3.1", "Nano Banana Pro", "Google Flow"],
-    "spec": true,
-    "featured": false
+    "poster": "/posters/volt9.webp"
   },
   {
-    "id": "aurelle-parfum",
-    "title": "AURELLE — Eau de Parfum",
-    "type": "video",
+    "id": "aurelle",
+    "kind": "campaign",
+    "brand": "AURELLE",
+    "name": "Retinal serum — full campaign",
+    "meta": "SPEC · CAMPAIGN · FILM + 5 STATICS",
+    "tools": "Nano Banana Pro · Veo 3.1 · Google Flow",
+    "blurb": "One bottle, one light, one grade. A product film and five statics that hold the same product — a campaign, not loose images.",
+    "items": [
+      {
+        "kind": "video",
+        "label": "Product film · 4 s",
+        "ratio": "16:9",
+        "src": "https://pub-9e646f4058704fdbacd71931b79d06a1.r2.dev/Serum_droplet_falling_into_bottle_202608241739.mp4",
+        "poster": "/posters/aurelle-clip.webp",
+        "alt": "AURELLE product film — serum droplet falling into an amber glass bottle"
+      },
+      {
+        "kind": "image",
+        "label": "The 3% Retinal Serum",
+        "ratio": "4:3",
+        "src": "/posters/full/aurelle-hero.webp",
+        "alt": "AURELLE static ad — amber dropper bottle on a travertine plinth with four ingredient callouts"
+      },
+      {
+        "kind": "image",
+        "label": "Built Like a Formula",
+        "ratio": "4:3",
+        "src": "/posters/full/aurelle-formula.webp",
+        "alt": "AURELLE static ad — bottle lying on travertine, shot from above, with formula callouts"
+      },
+      {
+        "kind": "image",
+        "label": "Nine Ingredients",
+        "ratio": "4:3",
+        "src": "/posters/full/aurelle-nine.webp",
+        "alt": "AURELLE static ad — still life with olive branch, ceramic dish of oil and the amber bottle"
+      },
+      {
+        "kind": "image",
+        "label": "One Dose. Four Drops.",
+        "ratio": "4:3",
+        "src": "/posters/full/aurelle-drops.webp",
+        "alt": "AURELLE static ad — macro of a glass pipette releasing a serum droplet beside the open bottle"
+      },
+      {
+        "kind": "image",
+        "label": "Weightless. Not Watery.",
+        "ratio": "4:3",
+        "src": "/posters/full/aurelle-weightless.webp",
+        "alt": "AURELLE static ad — serum smear and four droplets on a stone slab, bottle entering from the right"
+      }
+    ]
+  },
+  {
+    "id": "klaro",
+    "kind": "video",
+    "brand": "KLARO",
+    "name": "Anhydrous balm — spec UGC",
+    "meta": "SPEC · UGC FILM · 15 S · 9:16 · ES",
+    "tools": "Veo 3.1 · ElevenLabs · Google Flow",
+    "blurb": "Spanish-market spec. Flip the jar: ingredient one isn't water. Demonstration, not testimonial.",
     "ratio": "9:16",
-    "src": "https://pub-9e646f4058704fdbacd71931b79d06a1.r2.dev/Serum_droplet_falling_into_bottle_202608241739.mp4",
-    "poster": "/posters/aurelle-parfum.webp",
-    "blurb": "UGC 30 s spec. You\u2019re the only one who\u2019ll never smell it right.",
-    "role": "Concept, script, generation, voice, edit",
-    "tools": ["Veo 3.1", "ElevenLabs", "Google Flow"],
-    "spec": true,
-    "featured": false
+    "src": "https://pub-9e646f4058704fdbacd71931b79d06a1.r2.dev/KLARO.mp4",
+    "poster": "/posters/klaro.webp"
   },
   {
-    "id": "aurelle-formula",
-    "title": "AURELLE — Built Like a Formula",
-    "type": "image",
-    "ratio": "16:9",
-    "src": "/posters/aurelle-bottle-stone.webp",
-    "poster": "/posters/aurelle-bottle-stone.webp",
-    "blurb": "Static ad. Ingredient callouts on a travertine surface.",
-    "role": "Concept, composition, generation, copy",
-    "tools": ["Nano Banana Pro", "Google Flow"],
-    "spec": true,
-    "featured": false
-  },
-  {
-    "id": "aurelle-weightless",
-    "title": "AURELLE — Weightless. Not Watery.",
-    "type": "image",
-    "ratio": "16:9",
-    "src": "/posters/aurelle-serum-stone.webp",
-    "poster": "/posters/aurelle-serum-stone.webp",
-    "blurb": "Static ad. Texture shot with product claim overlay.",
-    "role": "Concept, composition, generation, copy",
-    "tools": ["Nano Banana Pro", "Google Flow"],
-    "spec": true,
-    "featured": false
-  },
-  {
-    "id": "aurelle-nine",
-    "title": "AURELLE — Nine Ingredients. Nothing Else.",
-    "type": "image",
-    "ratio": "16:9",
-    "src": "/posters/aurelle-still-life.webp",
-    "poster": "/posters/aurelle-still-life.webp",
-    "blurb": "Static ad. Clean still life with olive botanicals.",
-    "role": "Concept, composition, generation, copy",
-    "tools": ["Nano Banana Pro", "Google Flow"],
-    "spec": true,
-    "featured": false
-  },
-  {
-    "id": "aurelle-drops",
-    "title": "AURELLE — One Dose. Four Drops.",
-    "type": "image",
-    "ratio": "16:9",
-    "src": "/posters/aurelle-droplet.webp",
-    "poster": "/posters/aurelle-droplet.webp",
-    "blurb": "Static ad. Macro pipette drop with annotated callouts.",
-    "role": "Concept, composition, generation, copy",
-    "tools": ["Nano Banana Pro", "Google Flow"],
-    "spec": true,
-    "featured": false
-  },
-  {
-    "id": "aurelle-hand",
-    "title": "AURELLE — Four Drops, Morning and Night.",
-    "type": "image",
-    "ratio": "16:9",
-    "src": "/posters/aurelle-hand.webp",
-    "poster": "/posters/aurelle-hand.webp",
-    "blurb": "Static UGC-style ad. Hand hold with usage instruction copy.",
-    "role": "Concept, composition, generation, copy",
-    "tools": ["Nano Banana Pro", "Google Flow"],
-    "spec": true,
-    "featured": false
-  },
-  {
-    "id": "vectrlabs",
-    "title": "Vectr Labs — Outrun the Noise",
-    "type": "image",
-    "ratio": "16:9",
-    "src": "/posters/aurelle-typography.webp",
-    "poster": "/posters/aurelle-typography.webp",
-    "blurb": "Static launch ad. Typography-led product drop announcement.",
-    "role": "Concept, composition, generation, copy",
-    "tools": ["Nano Banana Pro", "Google Flow"],
-    "spec": true,
-    "featured": false
+    "id": "vectr",
+    "kind": "image",
+    "brand": "VECTR LABS",
+    "name": "Sneaker drop — launch static",
+    "meta": "SPEC · STATIC · 4:3",
+    "tools": "Nano Banana Pro · Google Flow",
+    "blurb": "Launch-day static. The type does the sprinting.",
+    "ratio": "4:3",
+    "src": "/posters/full/vectr-outrun.webp",
+    "alt": "Vectr Labs launch static — sneaker close-up on asphalt under bold yellow display type reading Outrun the Noise"
   }
 ]
